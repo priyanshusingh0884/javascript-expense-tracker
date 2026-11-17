@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>Expense Tracker</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="first">
+            <form action="" id="transaction-form">
+                <label for="title">Enter the title here:</label>
+                <input type="text" class="title" id="title" placeholder="Enter Title Here" required>
+
+                <label for="amount">Enter the amount here:</label>
+                <input type="number" class="amount" id="amount" placeholder="Enter Your Amount Here" min="1" required
+                    step="any">
+
+                <label for="date">Enter date here:</label>
+                <input type="date" id="date" required>
+
+                <label for="type">Enter the type here:</label>
+                <select name="type" id="type" required>
+                    <option value="" disabled selected>Select Transaction Type</option>
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                </select>
+
+                <label for="category">Category Select:</label>
+                <select name="category" id="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="salary">Salary</option>
+                    <option value="food">Food</option>
+                    <option value="travel">Travel</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="education">Education</option>
+                    <option value="other">Other</option>
+                </select>
+                <button class="transaction-btn" id="transaction-btn" type="submit">Add Transaction</button>
+                <button class="cancel" id="cancel" type="button">Cancel Edit</button>
+            </form>
+        </section>
+
+        <section class="month-selector">
+            <label for="month-select">Select Month:</label>
+
+            <select id="month-select">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10" selected>October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+        </section>
+
+        <section class="year-selector">
+            <label for="year-select">Select Year:</label>
+
+            <select id="year-select">
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026" selected>2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+                <option value="2031">2031</option>
+                <option value="2032">2032</option>
+            </select>
+        </section>
+
+        <section class="second">
+            <input type="text" id="search-input" placeholder="Search transactions...">
+
+            <label for="sort-transaction">Sort Transactions:</label>
+            <select  id="sort-transaction">
+                <option value="default">Default Order</option>
+                <option value="low-high">Amount: Low to High</option>
+                <option value="high-low">Amount: High to Low</option>
+            </select>
+            <div class="transaction-history" id="transaction-history">
+                <h2>Transaction History</h2>
+                <div class="filter">
+                    <button id="all-filter">All</button>
+                    <button id="income-filter">Income</button>
+                    <button id="expense-filter">Expense</button>
+                </div>
+                <div id="transaction-list"></div>
+            </div>
+        </section>
+
+        <section class="third">
+            <div class="total-balance" id="total-balance">
+                <h2>Total balance</h2>
+                <p id="balance-value"></p>
+            </div>
+            <div class="income" id="income">
+                <h2>Total Income</h2>
+                <p id="income-value"></p>
+            </div>
+            <div class="expense" id="expense">
+                <h2>Total Expenses</h2>
+                <p id="expense-value"></p>
+            </div>
+        </section>
+
+        <section class="fourth">
+            <div class="monthly-income" id="monthly-income">
+                <h2>Monthly Income</h2>
+                <p id="monthlyIncome"></p>
+            </div>
+            <div class="monthly-expense" id="monthly-expense">
+                <h2>Monthly Expenses</h2>
+                <p id="monthlyExpenses"></p>
+            </div>
+            <div class="monthly-savings" id="monthly-savings">
+                <h2>Monthly Savings</h2>
+                <p id="monthlySavings"></p>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
